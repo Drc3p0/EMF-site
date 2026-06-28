@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMF Explorer - Tune in to the electromagnetic frequencies around you</title>
+<meta name="description" content="The EMF Explorer Badge is a hands-on kit that turns the invisible electrical activity around you into something you can explore. Solder it, wear it, and go listen to your world.">
+<link rel="canonical" href="https://emfexplorer.space/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EMF Explorer">
+<meta property="og:url" content="https://emfexplorer.space/">
+<meta property="og:title" content="EMF Explorer - Tune in to the electromagnetic frequencies around you">
+<meta property="og:description" content="A hands-on soldering kit that turns the invisible electrical activity of everyday electronics into sound. Build it, wear it, and go listen to your world.">
+<meta property="og:image" content="https://emfexplorer.space/assets/images/emfbadgeilluminatedfrontangled.jpg">
+<meta property="og:image:alt" content="EMF Explorer badge illuminated, glowing green">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EMF Explorer - Tune in to the electromagnetic frequencies around you">
+<meta name="twitter:description" content="A hands-on soldering kit that turns the invisible electrical activity of everyday electronics into sound. Build it, wear it, and go listen to your world.">
+<meta name="twitter:image" content="https://emfexplorer.space/assets/images/emfbadgeilluminatedfrontangled.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "EMF Explorer",
+  "alternateName": "SporkLogic",
+  "url": "https://emfexplorer.space/",
+  "logo": "https://emfexplorer.space/assets/images/emfbadgeilluminatedfrontangled.jpg",
+  "sameAs": [
+    "https://sporklogic.com",
+    "https://darcyneal.com",
+    "https://github.com/drc3p0/emf-explorer-badge",
+    "https://hachyderm.io/@drc3p0",
+    "https://instagram.com/drc3p0"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "EMF Explorer Badge",
+  "description": "A hands-on soldering kit that turns the invisible electrical activity of everyday electronics into sound. Build it, wear it, and go listen to your world.",
+  "image": "https://emfexplorer.space/assets/images/emfbadgeilluminatedfrontangled.jpg",
+  "brand": {
+    "@type": "Brand",
+    "name": "EMF Explorer"
+  },
+  "category": "Electronics Soldering Kit",
+  "offers": {
+    "@type": "Offer",
+    "url": "REPLACE_WITH_ETSY_LISTING_LINK",
+    "priceCurrency": "USD",
+    "price": "29.99",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "SporkLogic"
+    }
+  }
+}
+</script>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>EMF <span class="accent">EXPLORER</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Build Guide</a>
+      <a href="demos.html">Demos</a>
+      <a href="workshops.html">Workshops</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="#buy" class="btn btn-outline" style="padding:8px 18px;">Buy - $29.99</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-text">
+      <span class="eyebrow">Signal // Acquired</span>
+      <h1>Tune in to the electromagnetic frequencies <span style="color:var(--green)">around you</span>.</h1>
+      <p class="lede">The EMF Explorer Badge is a hands-on soldering kit that turns the invisible electrical activity of everyday electronics into sound. Walk around, listen, compare devices, and build intuition for the signals hiding in the modern world.</p>
+      <div class="tag-row" style="justify-content:flex-start; margin-top:24px;">
+        <a href="#buy" class="btn">Get the Kit</a>
+        <a href="workshops.html" class="btn btn-outline">Book a Workshop</a>
+      </div>
+      <div class="tag-row" style="justify-content:flex-start;">
+        <span class="tag">Ages 11+</span>
+        <span class="tag">Soldering Required</span>
+        <span class="tag">Open Hardware</span>
+        <span class="tag">No Experience Needed</span>
+      </div>
+    </div>
+    <div class="hero-media">
+      <img src="assets/images/emfbadgeilluminatedfrontangled.jpg" alt="EMF Explorer badge illuminated, glowing green" loading="lazy" style="border-radius:12px; width:100%; min-height:380px; object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT IS IT ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Field Guide // 01</span>
+      <h2>What you're holding</h2>
+      <p>An electromagnetic frequency sensing circuit that lets you listen to the hidden electrical world - the way Bluetooth hardware sounds when it's transmitting, how a laptop touchpad clicks under your finger, the hum of a power supply behind a wall.</p>
+    </div>
+    <div class="grid cols-3">
+      <div class="panel card">
+        <div class="icon">📡</div>
+        <h3>Hear the Invisible</h3>
+        <p>Inductors on the board pick up EMF in the 20Hz–20kHz range and amplify it ~1000x into your headphones - frequencies your ears couldn't otherwise catch.</p>
+      </div>
+      <div class="panel card">
+        <div class="icon">🛠️</div>
+        <h3>Build It Yourself</h3>
+        <p>A guided through-hole soldering kit. No previous electronics experience required - every part is labeled, every step explained.</p>
+      </div>
+      <div class="panel card">
+        <div class="icon">💡</div>
+        <h3>Wear It, Light It</h3>
+        <p>Once assembled, it's a glowing wearable badge on a lanyard - light your path at night, then go sniff out signals with headphones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY / IN THE FIELD ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Transmissions // From the Field</span>
+      <h2>Explorers in the wild</h2>
+      <p>From hackerspaces to Maker Faires to Chaos Communication Congress - explorers have been listening to the world.</p>
+    </div>
+    <div class="grid cols-4">
+      <img src="assets/images/kidwithEMFlistening.jpg" alt="Kid listening to EMF from a wall outlet with the badge" loading="lazy" style="border-radius:12px; width:100%; aspect-ratio:1; object-fit:cover;">
+      <img src="assets/images/PXL_20240223_003516082.jpg" alt="Explorer listening to a streetlight pole outdoors" loading="lazy" style="border-radius:12px; width:100%; aspect-ratio:1; object-fit:cover;">
+      <img src="assets/images/emfheldinfield.jpg" alt="Holding the EMF Explorer badge outdoors in a park" loading="lazy" style="border-radius:12px; width:100%; aspect-ratio:1; object-fit:cover;">
+      <img src="assets/images/emfmeterlisten.jpg" alt="Listening to a parking meter's EMF emissions" loading="lazy" style="border-radius:12px; width:100%; aspect-ratio:1; object-fit:cover;">
+    </div>
+  </div>
+</section>
+
+<!-- ===== BUY ===== -->
+<section id="buy">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Acquire // Hardware</span>
+      <h2>Get your EMF Explorer Badge</h2>
+      <p>Order the kit, build it with the included guide, and start exploring. Checkout is handled securely through Etsy.</p>
+    </div>
+    <div class="grid cols-2" style="max-width:820px; margin:0 auto;">
+      <div class="price-box">
+        <div class="amount">$29.99</div>
+        <p>EMF Explorer Badge - soldering kit</p>
+        <p style="font-size:0.85rem;">Runs on 2x AAA batteries (not included). Requires soldering iron + headphones with 3.5mm jack.</p>
+        <!--
+          ETSY INTEGRATION
+          Create a listing on Etsy for the EMF Explorer Badge at $29.99.
+          Paste the listing URL below once the shop is live.
+        -->
+        <a href="REPLACE_WITH_ETSY_LISTING_LINK" target="_blank" rel="noopener" class="btn mt-lg">Buy on Etsy</a>
+      </div>
+      <div class="panel">
+        <h3>Prefer another retailer?</h3>
+        <p style="color:var(--text-dim);">The kit is also available through these partners:</p>
+        <ul style="color:var(--text-dim); line-height:2;">
+          <li><a href="https://www.makershed.com/products/emf" target="_blank" rel="noopener">MakerShed (US)</a> - ready-to-assemble soldering kit</li>
+          <li><a href="https://oshpark.com/shared_projects/bRVDS1Pq" target="_blank" rel="noopener">OshPark</a> - order a bare PCB</li>
+          <li>Pimoroni (UK) - coming soon</li>
+        </ul>
+        <p style="color:var(--text-dim); font-size:0.9rem;">Design files are fully open hardware - find them on <a href="https://github.com/drc3p0/emf-explorer-badge" target="_blank" rel="noopener">GitHub</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPLORE MORE ===== -->
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Navigation // Next Steps</span>
+      <h2>Where to go from here</h2>
+    </div>
+    <div class="grid cols-3">
+      <a class="panel card" href="docs.html" style="color:inherit;">
+        <div class="icon">📖</div>
+        <h3>Documentation</h3>
+        <p>Assembly guide, soldering safety, and how the circuit actually works.</p>
+      </a>
+      <a class="panel card" href="demos.html" style="color:inherit;">
+        <div class="icon">🎧</div>
+        <h3>Demos</h3>
+        <p>Sound examples, the interactive frequency monitor, and the EMF Explorer zine.</p>
+      </a>
+      <a class="panel card" href="workshops.html" style="color:inherit;">
+        <div class="icon">🧑‍🏫</div>
+        <h3>Workshops</h3>
+        <p>Bring the EMF Explorer build experience to your event, classroom, or hackerspace.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ZINE / SUPPORT ===== -->
+<section>
+  <div class="wrap">
+    <div class="panel" style="display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+      <div>
+        <h3 style="margin-top:0;">Built for curious hands and curious minds.</h3>
+        <p style="color:var(--text-dim); max-width:520px; margin-bottom:0;">Explore, listen, and learn your way through the invisible electrical layer of the modern world. EMF Explorer is open hardware, made with care by SporkLogic.</p>
+      </div>
+      <a href="https://ko-fi.com/sporklogic" target="_blank" rel="noopener" class="btn btn-magenta">Support the Workshop Fund</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>EMF Explorer - tune in to the electromagnetic frequencies around you.</p>
+    <div class="social">
+      <a href="https://hachyderm.io/@drc3p0" target="_blank" rel="noopener">Mastodon</a> ·
+      <a href="https://instagram.com/drc3p0" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://github.com/drc3p0" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="made-by">Made by <a href="https://sporklogic.com" target="_blank" rel="noopener">SporkLogic</a> &amp; <a href="https://darcyneal.com" target="_blank" rel="noopener">Darcy Neal</a> · © 2026</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>

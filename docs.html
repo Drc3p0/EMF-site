@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Guide - EMF Explorer</title>
+<meta name="description" content="EMF Explorer assembly guide, soldering safety, and how the circuit works.">
+<link rel="canonical" href="https://emfexplorer.space/docs.html">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EMF Explorer">
+<meta property="og:url" content="https://emfexplorer.space/docs.html">
+<meta property="og:title" content="Build Guide - EMF Explorer">
+<meta property="og:description" content="EMF Explorer assembly guide, soldering safety, and how the circuit works.">
+<meta property="og:image" content="https://emfexplorer.space/assets/images/emfbadgeilluminatedfrontangled.jpg">
+<meta property="og:image:alt" content="EMF Explorer badge illuminated, glowing green">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Build Guide - EMF Explorer">
+<meta name="twitter:description" content="EMF Explorer assembly guide, soldering safety, and how the circuit works.">
+<meta name="twitter:image" content="https://emfexplorer.space/assets/images/emfbadgeilluminatedfrontangled.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Who is the EMF Explorer Badge for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This kit is for everyone curious about their surroundings. Wear it on a lanyard to light your way at night, or pick up headphones and start hunting for EMF signals. It's a great entry point into electronics, no prior experience required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is EMF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every conductive material can act as an antenna, picking up small currents from electromagnetic waves, which can be amplified and heard. Everyday household electronics tend to emit disturbances between 20Hz and 20kHz, right in the range of human hearing. EMF Explorer amplifies those signals by roughly 1000x so you can hear them clearly."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does the EMF Explorer Badge work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Inductors on the board detect EMF signals. When a changing magnetic field passes near an inductor, it induces a voltage, which is amplified and sent to your headphones as sound."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is the EMF Explorer Badge made?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Designed in KiCad. The badge artwork was created with vector layers in Affinity Designer, then converted into KiCad layers using Gingerbread."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://emfexplorer.space/"},
+    {"@type": "ListItem", "position": 2, "name": "Build Guide", "item": "https://emfexplorer.space/docs.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<canvas id="starfield"></canvas>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand"><span class="dot"></span>EMF <span class="accent">EXPLORER</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="docs.html">Build Guide</a>
+      <a href="demos.html">Demos</a>
+      <a href="workshops.html">Workshops</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="index.html#buy" class="btn btn-outline" style="padding:8px 18px;">Buy - $29.99</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:20px;">
+  <div class="wrap" style="display:block;">
+    <span class="eyebrow">Documentation // Assembly</span>
+    <h1>Build your EMF Explorer Badge</h1>
+    <p class="lede">Everything you need to assemble, understand, and troubleshoot your kit - written for explorers of all skill levels. Estimated build time: 1–2 hours.</p>
+  </div>
+</section>
+
+<!-- ===== NEW TO SOLDERING ===== -->
+<section style="padding-top:20px;">
+  <div class="wrap">
+    <div class="panel">
+      <h2>New to soldering?</h2>
+      <p style="color:var(--text-dim);">Take a few minutes to read through a soldering basics guide before you start. Two good options:</p>
+      <ul style="color:var(--text-dim); line-height:2;">
+        <li><a href="https://sporklogic.com/wp-content/uploads/2025/11/FullSolderComic_EN.pdf" target="_blank" rel="noopener">Full Solder Comic (PDF)</a> - a friendly illustrated guide</li>
+        <li>Or refer to the infographic below, showing how to heat the pad, add solder, and let heat spread evenly</li>
+      </ul>
+      <img src="https://sporklogic.com/wp-content/uploads/2025/11/image1.jpg" alt="Soldering basics infographic - heat the pad, add solder, let heat spread evenly" loading="lazy" style="border-radius:8px; width:100%; margin-top:12px;">
+      <div class="callout">
+        <strong>Soldering tip:</strong> Keep your iron tip tinned to prevent oxidation, which reduces solder adherence and heat transfer. Clean the tip with a sponge or brass cleaner, and always leave fresh solder on the tip when not in use.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SAFETY ===== -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Protocol // Safety First</span>
+      <h2>Safety first</h2>
+    </div>
+    <div class="grid cols-3">
+      <div class="panel card">
+        <div class="icon">💨</div>
+        <h3>Good ventilation</h3>
+        <p>Avoid inhaling solder smoke. Exhale while soldering to blow fumes away, and work in a well-ventilated area or use a fume extractor.</p>
+      </div>
+      <div class="panel card">
+        <div class="icon">🧼</div>
+        <h3>Wash your hands</h3>
+        <p>Avoid eating or drinking while soldering - solder may contain lead. Wash hands when you're done.</p>
+      </div>
+      <div class="panel card">
+        <div class="icon">🥽</div>
+        <h3>Careful cutting</h3>
+        <p>When trimming leads, hold the lead or aim it downward to avoid flying metal. Wear safety glasses, and keep your iron away from anything but its stand while hot.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SUPPLIES ===== -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="panel">
+      <h2>Step 1 - Gather your supplies</h2>
+      <div class="grid cols-2">
+        <ul style="color:var(--text-dim); line-height:2; margin:0;">
+          <li>Soldering iron (40–80W recommended)</li>
+          <li>Solder</li>
+          <li>Heat-resistant work surface</li>
+        </ul>
+        <ul style="color:var(--text-dim); line-height:2; margin:0;">
+          <li>Wire snips for trimming leads</li>
+          <li>Two AAA batteries</li>
+          <li>Headphones with a 3.5mm audio plug</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ASSEMBLY STEPS ===== -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="panel">
+      <h2>Step 2 - Place and solder components</h2>
+      <p style="color:var(--text-dim);">Your component layout photo is your build map. Red text labels on parts indicate they must be inserted in a specific orientation - read the description for each part before placing it. Solder in stages and check your work as you go. Zoom in on the diagram as needed.</p>
+      <img src="https://sporklogic.com/wp-content/uploads/2025/11/image2-576x1024.png" alt="Rear-of-board component callout diagram" loading="lazy" style="border-radius:8px; max-width:576px; width:100%; margin-top:16px; display:block;">
+      <p style="color:var(--text-dim); margin-top:16px;">Prefer video? Watch the <a href="https://www.youtube.com/watch?v=RpOQVFWgqNM" target="_blank" rel="noopener">full video assembly guide on YouTube</a>.</p>
+    </div>
+
+    <div class="panel mt-lg">
+      <h2>Step 3 - Trim leads &amp; inspect</h2>
+      <ul class="steps">
+        <li>
+          <h4>Trim as you go</h4>
+          <p>Hold the lead with your other hand, or aim it downward, before snipping - and wear safety glasses.</p>
+        </li>
+        <li>
+          <h4>Inspect every joint</h4>
+          <p>Make sure all solder joints connect securely and look shiny/smooth. Reflow solder as needed to get a solid bond.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="panel mt-lg">
+      <h2>Step 4 - Power on and test</h2>
+      <p style="color:var(--text-dim);">Connect the batteries, plug in your headphones, and hold your EMF board close to an electronic device - a cellphone, a power cable, even your soldering iron. You should hear that device's EMF signature in your headphones.</p>
+    </div>
+
+    <div class="panel mt-lg">
+      <h2>Step 5 - Go exploring!</h2>
+      <p style="color:var(--text-dim);">Listen to different devices and notice the differences. How do Bluetooth headphones sound when connecting versus transmitting? What does a laptop touchpad sound like under your finger? Get curious about everything around you - head to the <a href="tutorials.html">Tutorials</a> page for ideas on what to listen to first.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Theory // How it Works</span>
+      <h2>Learn more about the board and how it works</h2>
+    </div>
+    <div class="grid cols-2">
+      <div class="panel">
+        <h3>Who's it for?</h3>
+        <p style="color:var(--text-dim);">This kit is for everyone curious about their surroundings. Wear it on a lanyard to light your way at night, or pick up headphones and start hunting for EMF signals. It's a great entry point into electronics - no prior experience required.</p>
+      </div>
+      <div class="panel">
+        <h3>What is EMF?</h3>
+        <p style="color:var(--text-dim);">Every conductive material can act as an antenna, picking up small currents from electromagnetic waves, which can be amplified and heard. Likewise, anything emitting electronic signals radiates them into the space around it - signals a coil of wire (like the inductors on this board) can pick up. Everyday household electronics tend to emit disturbances between 20Hz and 20kHz - right in the range of human hearing. EMF Explorer amplifies those signals by roughly 1000x so you can hear them clearly.</p>
+      </div>
+      <div class="panel">
+        <h3>How does it work?</h3>
+        <p style="color:var(--text-dim);">Inductors on the board detect EMF signals. When a changing magnetic field passes near an inductor, it induces a voltage - that voltage is amplified and sent to your headphones as sound.</p>
+      </div>
+      <div class="panel">
+        <h3>How's it made?</h3>
+        <p style="color:var(--text-dim);">Designed in <a href="https://www.kicad.org/" target="_blank" rel="noopener">KiCad</a>. The badge artwork was created with vector layers in Affinity Designer, then converted into KiCad layers using <a href="https://gingerbread.wntr.dev/" target="_blank" rel="noopener">Gingerbread</a>.</p>
+        <img src="assets/images/EMFPCBnobackground.png" alt="EMF Explorer badge PCB artwork, UFO design with illuminated beam" loading="lazy" style="max-width:220px; width:100%; margin-top:12px; display:block;">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>EMF Explorer - tune in to the electromagnetic frequencies around you.</p>
+    <div class="social">
+      <a href="https://hachyderm.io/@drc3p0" target="_blank" rel="noopener">Mastodon</a> ·
+      <a href="https://instagram.com/drc3p0" target="_blank" rel="noopener">Instagram</a> ·
+      <a href="https://github.com/drc3p0" target="_blank" rel="noopener">GitHub</a>
+    </div>
+    <p class="made-by">Made by <a href="https://sporklogic.com" target="_blank" rel="noopener">SporkLogic</a> &amp; <a href="https://darcyneal.com" target="_blank" rel="noopener">Darcy Neal</a> · © 2026</p>
+  </div>
+</footer>
+<script src="assets/main.js"></script>
+</body>
+</html>
