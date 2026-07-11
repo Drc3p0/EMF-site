@@ -54,17 +54,11 @@
     "name": "EMF Explorer"
   },
   "category": "Electronics Soldering Kit",
-  "offers": {
-    "@type": "Offer",
-    "url": "REPLACE_WITH_ETSY_LISTING_LINK",
-    "priceCurrency": "USD",
-    "price": "29.99",
-    "availability": "https://schema.org/InStock",
-    "seller": {
-      "@type": "Organization",
-      "name": "SporkLogic"
-    }
-  }
+  "offers": [
+    {"@type": "Offer", "url": "https://www.makershed.com/products/emf", "availability": "https://schema.org/InStock", "seller": {"@type": "Organization", "name": "MakerShed"}},
+    {"@type": "Offer", "url": "https://shop.pimoroni.com/products/emf-explorer-badge", "availability": "https://schema.org/InStock", "seller": {"@type": "Organization", "name": "Pimoroni"}},
+    {"@type": "Offer", "url": "https://ko-fi.com/s/437e353366", "availability": "https://schema.org/InStock", "seller": {"@type": "Organization", "name": "SporkLogic"}}
+  ]
 }
 </script>
 </head>
@@ -80,8 +74,8 @@
       <a href="docs.html">Build Guide</a>
       <a href="demos.html">Demos</a>
       <a href="workshops.html">Workshops</a>
-      <a href="tutorials.html">Tutorials</a>
-      <a href="#buy" class="btn btn-outline" style="padding:8px 18px;">Buy - $29.99</a>
+
+      <a href="#buy" class="btn btn-outline" style="padding:8px 18px;">Buy</a>
     </nav>
   </div>
 </header>
@@ -98,10 +92,12 @@
         <a href="workshops.html" class="btn btn-outline">Book a Workshop</a>
       </div>
       <div class="tag-row" style="justify-content:flex-start;">
-        <span class="tag">Ages 11+</span>
+        <span class="tag">Ages 14+</span>
         <span class="tag">Soldering Required</span>
         <span class="tag">Open Hardware</span>
         <span class="tag">No Experience Needed</span>
+        <span class="tag">Components Included</span>
+        <span class="tag">Educational Electronics</span>
       </div>
     </div>
     <div class="hero-media">
@@ -161,57 +157,45 @@
     <div class="section-head">
       <span class="eyebrow">Acquire // Hardware</span>
       <h2>Get your EMF Explorer Badge</h2>
-      <p>Order the kit, build it with the included guide, and start exploring. Checkout is handled securely through Etsy.</p>
+      <p>Pick up a kit from one of these retailers, order a bare PCB, or build from the open hardware files.</p>
     </div>
-    <div class="grid cols-2" style="max-width:820px; margin:0 auto;">
-      <div class="price-box">
-        <div class="amount">$29.99</div>
-        <p>EMF Explorer Badge - soldering kit</p>
-        <p style="font-size:0.85rem;">Runs on 2x AAA batteries (not included). Requires soldering iron + headphones with 3.5mm jack.</p>
-        <!--
-          ETSY INTEGRATION
-          Create a listing on Etsy for the EMF Explorer Badge at $29.99.
-          Paste the listing URL below once the shop is live.
-        -->
-        <a href="REPLACE_WITH_ETSY_LISTING_LINK" target="_blank" rel="noopener" class="btn mt-lg">Buy on Etsy</a>
-      </div>
-      <div class="panel">
-        <h3>Prefer another retailer?</h3>
-        <p style="color:var(--text-dim);">The kit is also available through these partners:</p>
-        <ul style="color:var(--text-dim); line-height:2;">
-          <li><a href="https://www.makershed.com/products/emf" target="_blank" rel="noopener">MakerShed (US)</a> - ready-to-assemble soldering kit</li>
-          <li><a href="https://oshpark.com/shared_projects/bRVDS1Pq" target="_blank" rel="noopener">OshPark</a> - order a bare PCB</li>
-          <li>Pimoroni (UK) - coming soon</li>
-        </ul>
-        <p style="color:var(--text-dim); font-size:0.9rem;">Design files are fully open hardware - find them on <a href="https://github.com/drc3p0/emf-explorer-badge" target="_blank" rel="noopener">GitHub</a>.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="store-grid">
 
-<!-- ===== EXPLORE MORE ===== -->
-<section>
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Navigation // Next Steps</span>
-      <h2>Where to go from here</h2>
-    </div>
-    <div class="grid cols-3">
-      <a class="panel card" href="docs.html" style="color:inherit;">
-        <div class="icon">📖</div>
-        <h3>Documentation</h3>
-        <p>Assembly guide, soldering safety, and how the circuit actually works.</p>
+      <a href="https://www.makershed.com/products/emf" target="_blank" rel="noopener" class="panel store-card">
+        <div class="store-region">US</div>
+        <h3>MakerShed</h3>
+        <p>Soldering kit, ships within the US.</p>
+        <span class="btn btn-outline">Shop Now</span>
       </a>
-      <a class="panel card" href="demos.html" style="color:inherit;">
-        <div class="icon">🎧</div>
-        <h3>Demos</h3>
-        <p>Sound examples, the interactive frequency monitor, and the EMF Explorer zine.</p>
+
+      <a href="https://shop.pimoroni.com/products/emf-explorer-badge" target="_blank" rel="noopener" class="panel store-card">
+        <div class="store-region">UK / EU / Worldwide</div>
+        <h3>Pimoroni</h3>
+        <p>Soldering kit, ships worldwide from the UK.</p>
+        <span class="btn btn-outline">Shop Now</span>
       </a>
-      <a class="panel card" href="workshops.html" style="color:inherit;">
-        <div class="icon">🧑‍🏫</div>
-        <h3>Workshops</h3>
-        <p>Bring the EMF Explorer build experience to your event, classroom, or hackerspace.</p>
+
+      <a href="https://ko-fi.com/s/437e353366" target="_blank" rel="noopener" class="panel store-card">
+        <div class="store-region">Local Pickup</div>
+        <h3>EMF Explorer Badge</h3>
+        <p>Order direct for local pickup from SporkLogic.</p>
+        <span class="btn btn-outline">Order</span>
       </a>
+
+      <a href="https://oshpark.com/shared_projects/bRVDS1Pq" target="_blank" rel="noopener" class="panel store-card">
+        <div class="store-region">PCB Only</div>
+        <h3>OshPark</h3>
+        <p>Order a bare purple PCB and source your own components.</p>
+        <span class="btn btn-outline">Order PCB</span>
+      </a>
+
+      <a href="https://github.com/drc3p0/emf-explorer-badge" target="_blank" rel="noopener" class="panel store-card">
+        <div class="store-region">Open Hardware</div>
+        <h3>Build Your Own</h3>
+        <p>Download the design files and build from scratch. Fully open hardware.</p>
+        <span class="btn btn-outline">View on GitHub</span>
+      </a>
+
     </div>
   </div>
 </section>

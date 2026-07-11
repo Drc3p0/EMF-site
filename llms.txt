@@ -2,7 +2,7 @@
 
 > The EMF Explorer Badge is an open-hardware soldering kit that turns the invisible electromagnetic activity of everyday electronics into sound. Build it, wear it as a glowing wearable badge, and go listen to the hidden electrical world around you.
 
-EMF Explorer is made by SporkLogic / Darcy Neal. The kit is a guided through-hole soldering project (ages 11+, no experience required) built around inductors that pick up EMF in the 20Hz-20kHz range and amplify it roughly 1000x into headphones. Once assembled it doubles as a glowing wearable badge on a lanyard.
+EMF Explorer is made by SporkLogic / Darcy Neal. The kit is a guided through-hole soldering project (ages 14+, no experience required) built around inductors that pick up EMF in the 20Hz-20kHz range and amplify it roughly 1000x into headphones. Once assembled it doubles as a glowing wearable badge on a lanyard.
 
 ## Pages
 

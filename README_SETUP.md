@@ -35,8 +35,6 @@ Green/space cyberpunk: dark background grid, neon green (#39ff94) + cyan (#5ef1f
 3. In repo Settings → Pages, set the source branch and folder.
 4. Add the `CNAME` file as described above if using a custom domain.
 
-I haven't created the repo or pushed anything — that part is yours to do (or ask me to walk you through it).
-
 ## Content sources used
 - https://emfexplorer.space/
 - https://sporklogic.com/emf-explorer-badge/
