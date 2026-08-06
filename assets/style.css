@@ -259,6 +259,60 @@ table.data-table th {
 .steps h4 { margin: 0 0 6px; color: var(--text); font-family: var(--font-display); }
 .steps p { margin: 0; color: var(--text-dim); }
 
+/* ===== Kit toggle (TH / SMD build guide) ===== */
+.kit-toggle-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  text-align: center;
+  padding: 22px 28px;
+}
+.kit-toggle-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+}
+.kit-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px;
+  background: var(--bg-deep);
+}
+.kit-toggle-btn {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  background: transparent;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.kit-toggle-btn:hover { color: var(--text); }
+.kit-toggle-btn.active {
+  background: var(--green);
+  color: var(--bg-deep);
+  box-shadow: 0 0 18px var(--green-glow);
+}
+/* Draw the eye to SMD since Through-Hole loads by default */
+.kit-toggle-btn[data-kit-select="smd"]:not(.active) {
+  color: var(--cyan);
+  box-shadow: 0 0 0 1px var(--cyan) inset;
+  animation: kit-toggle-pulse 1.8s ease-in-out 3;
+}
+@keyframes kit-toggle-pulse {
+  0%, 100% { box-shadow: 0 0 0 1px var(--cyan) inset; }
+  50% { box-shadow: 0 0 14px rgba(94, 241, 255, 0.55), 0 0 0 1px var(--cyan) inset; }
+}
+
 /* ===== Callouts ===== */
 .callout {
   border-left: 3px solid var(--cyan);

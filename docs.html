@@ -101,10 +101,23 @@
   </div>
 </section>
 
+<!-- ===== KIT TOGGLE ===== -->
+<section style="padding-top:20px; padding-bottom:0;">
+  <div class="wrap">
+    <div class="panel kit-toggle-panel">
+      <span class="kit-toggle-label">Which kit do you have?</span>
+      <div class="kit-toggle" role="group" aria-label="Select kit type">
+        <button type="button" class="kit-toggle-btn active" data-kit-select="th" aria-pressed="true">Through-Hole</button>
+        <button type="button" class="kit-toggle-btn" data-kit-select="smd" aria-pressed="false">SMD</button>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== NEW TO SOLDERING ===== -->
 <section style="padding-top:20px;">
   <div class="wrap">
-    <div class="panel">
+    <div class="panel" data-kit="th">
       <h2>New to soldering?</h2>
       <p style="color:var(--text-dim);">Take a few minutes to read through a soldering basics guide before you start. Two good options:</p>
       <ul style="color:var(--text-dim); line-height:2;">
@@ -116,6 +129,24 @@
         <strong>Soldering tip:</strong> Keep your iron tip tinned to prevent oxidation, which reduces solder adherence and heat transfer. Clean the tip with a sponge or brass cleaner, and always leave fresh solder on the tip when not in use.
       </div>
     </div>
+
+    <div class="panel" data-kit="smd" hidden>
+      <h2>New to soldering?</h2>
+      <p style="color:var(--text-dim);">Refer to the infographic below, showing how to solder one pad, use tweezers to tack the part down, then solder the other side of the pad.</p>
+      <img src="assets/images/SMDsolderingguide.png" alt="SMD soldering guide - solder one pad, tack the part with tweezers, solder the other side" loading="lazy" style="border-radius:8px; width:100%; margin-top:12px;">
+      <p style="color:var(--text-dim); margin-top:16px;">Check out this GIF to see SMD soldering in action.</p>
+      <img src="assets/images/SMDsoldering.gif" alt="Animated GIF of SMD soldering technique" loading="lazy" style="border-radius:8px; width:100%; margin-top:12px;">
+      <div class="callout">
+        <strong>Soldering tip:</strong> Keep your iron tip tinned to prevent oxidation, which reduces solder adherence and heat transfer. Clean the tip with a sponge or brass cleaner, and always leave fresh solder on the tip when not in use.
+      </div>
+    </div>
+
+    <div class="panel mt-lg" data-kit="smd" hidden>
+      <h2>Soldering ICs</h2>
+      <p style="color:var(--text-dim);">For soldering ICs, you can try soldering one pin at a time, or if you have copper desoldering braid available, try out this drag soldering technique.</p>
+      <img src="assets/images/SMDicSoldering.gif" alt="Animated GIF of drag soldering technique for ICs" loading="lazy" style="border-radius:8px; width:100%; margin-top:12px;">
+      <p style="color:var(--text-dim); margin-top:16px;">To drag-solder your IC, tack one corner pin of your IC to get your pins lined up. Then flood each side with solder, ensuring all pins and pads are coated. Then, use a piece of braided copper to soak up the excess solder. Make sure to not pull away the copper if it hardens on your pins..use your iron to remelt the solder to remove the excess safely.</p>
+    </div>
   </div>
 </section>
 
@@ -125,7 +156,7 @@
     <div class="section-head">
       <h2>Safety first</h2>
     </div>
-    <div class="grid cols-3">
+    <div class="grid cols-4">
       <div class="panel card">
         <div class="icon">💨</div>
         <h3>Good ventilation</h3>
@@ -141,6 +172,11 @@
         <h3>Careful cutting</h3>
         <p>When trimming leads, hold the lead or aim it downward to avoid flying metal. Wear safety glasses, and keep your iron away from anything but its stand while hot.</p>
       </div>
+      <div class="panel card">
+        <div class="icon">⚠️</div>
+        <h3>Watch the tweezers</h3>
+        <p>Fine-tip tweezers are sharp, and its easy to drop SMD parts. Use carefully and don't poke anyone with them.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -150,16 +186,18 @@
   <div class="wrap">
     <div class="panel">
       <h2>Step 1 - Gather your supplies</h2>
-      <div class="grid cols-2">
+      <div class="grid cols-2" data-kit="smd" hidden>
         <ul style="color:var(--text-dim); line-height:2; margin:0;">
           <li>Soldering iron (40–80W recommended)</li>
           <li>Solder</li>
           <li>Heat-resistant work surface</li>
+          <li>Fine-tip tweezers</li>
         </ul>
         <ul style="color:var(--text-dim); line-height:2; margin:0;">
           <li>Wire snips for trimming leads</li>
           <li>Two AAA batteries</li>
           <li>Headphones with a 3.5mm audio plug</li>
+          <li>Copper braid for removing excess solder (optional)</li>
         </ul>
       </div>
     </div>
@@ -170,10 +208,17 @@
 <section style="padding-top:0;">
   <div class="wrap">
     <div class="panel">
-      <h2>Step 2 - Place and solder components</h2>
-      <p style="color:var(--text-dim);">Your component layout photo is your build map. Red text labels on parts indicate they must be inserted in a specific orientation - read the description for each part before placing it. Solder in stages and check your work as you go. Zoom in on the diagram as needed.</p>
-      <img src="https://sporklogic.com/wp-content/uploads/2025/11/image2-576x1024.png" alt="Rear-of-board component callout diagram" loading="lazy" style="border-radius:8px; max-width:576px; width:100%; margin-top:16px; display:block;">
-      <p style="color:var(--text-dim); margin-top:16px;">Prefer video? Watch the <a href="https://www.youtube.com/watch?v=RpOQVFWgqNM" target="_blank" rel="noopener">full video assembly guide on YouTube</a>.</p>
+      <div data-kit="th">
+        <h2>Step 2 - Place and solder components</h2>
+        <p style="color:var(--text-dim);">This board layout photo is your build guide. Red text labels on parts indicate they must be inserted in a specific orientation - read the description for each part before placing it. Solder in stages and check your work as you go. Zoom in on the diagram as needed.</p>
+        <img src="https://sporklogic.com/wp-content/uploads/2025/11/image2-576x1024.png" alt="Rear-of-board component callout diagram" loading="lazy" style="border-radius:8px; max-width:576px; width:100%; margin:16px auto 0; display:block;">
+        <p style="color:var(--text-dim); margin-top:16px;">Prefer video? Watch the <a href="https://www.youtube.com/watch?v=RpOQVFWgqNM" target="_blank" rel="noopener">full video assembly guide on YouTube</a>.</p>
+      </div>
+      <div data-kit="smd" hidden>
+        <h2>Step 2 - Place and solder components</h2>
+        <p style="color:var(--text-dim);">This board layout photo is your build guide. Lay out your parts ahead of time and identify where everything goes. SMD resistors are two different sizes and have different text labels on the part, and SMD capacitors are different colors and sizes. The LED and inductor legs need to be pre-bent and trimmed to fit before soldering in place. Some parts must be placed in a specific orientation, so examine the description for each part before placing it. Solder in stages and check your work as you go. Zoom in on the photo as needed.</p>
+        <img src="assets/images/EMF-SMDassembly.png" alt="SMD component layout diagram" loading="lazy" style="border-radius:8px; max-width:576px; width:100%; margin:16px auto 0; display:block;">
+      </div>
     </div>
 
     <div class="panel mt-lg">

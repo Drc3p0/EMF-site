@@ -16,7 +16,60 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Scroll reveal
   initReveal();
+
+  // Kit toggle (Through-Hole / SMD build guide)
+  initKitToggle();
 });
+
+// ── Kit toggle (docs.html: TH vs SMD build guide) ───────────────────────────
+function initKitToggle() {
+  const buttons = document.querySelectorAll("[data-kit-select]");
+  if (!buttons.length) return;
+
+  const kitBlocks = document.querySelectorAll("[data-kit]");
+  const validKits = ["th", "smd"];
+
+  function resolveInitialKit() {
+    const params = new URLSearchParams(location.search);
+    const fromUrl = params.get("kit");
+    if (validKits.includes(fromUrl)) return fromUrl;
+
+    const stored = localStorage.getItem("kit-type");
+    if (validKits.includes(stored)) return stored;
+
+    return "th";
+  }
+
+  function setKit(kit, updateUrl) {
+    if (!validKits.includes(kit)) kit = "th";
+
+    kitBlocks.forEach((el) => {
+      el.hidden = el.getAttribute("data-kit") !== kit;
+    });
+
+    buttons.forEach((btn) => {
+      const isActive = btn.getAttribute("data-kit-select") === kit;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+
+    localStorage.setItem("kit-type", kit);
+
+    if (updateUrl) {
+      const params = new URLSearchParams(location.search);
+      params.set("kit", kit);
+      history.replaceState(null, "", `${location.pathname}?${params.toString()}${location.hash}`);
+    }
+  }
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      setKit(btn.getAttribute("data-kit-select"), true);
+    });
+  });
+
+  setKit(resolveInitialKit(), false);
+}
 
 // ── Scroll reveal ──────────────────────────────────────────────────────────
 function initReveal() {
