@@ -313,6 +313,48 @@ table.data-table th {
   50% { box-shadow: 0 0 14px rgba(94, 241, 255, 0.55), 0 0 0 1px var(--cyan) inset; }
 }
 
+/* ===== Frequency monitor (native canvas widget) ===== */
+.freq-display {
+  position: relative;
+  background: rgba(12, 22, 32, 0.85);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 20px 50px 20px;
+  margin-top: 16px;
+}
+#freq-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 3;
+  border-radius: 8px;
+}
+#freq-peak-overlay {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+#freq-peak-overlay .peak-label {
+  position: absolute;
+  top: 3px;
+  font: 16px/1.2 var(--font-body);
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  transform: translateX(-50%);
+}
+.freq-controls {
+  text-align: center;
+  margin-top: 16px;
+}
+.freq-status {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  margin-top: 8px;
+  min-height: 1.2em;
+}
+
 /* ===== Callouts ===== */
 .callout {
   border-left: 3px solid var(--cyan);
